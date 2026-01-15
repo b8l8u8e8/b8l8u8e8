@@ -1,0 +1,47 @@
+name: Metrics
+
+on:
+  # 每天 UTC 0 点跑一次（你也可以改）
+  schedule:
+    - cron: "0 0 * * *"
+  # 允许你在 Actions 页面手动点击运行
+  workflow_dispatch:
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 允许把生成的 svg 提交回仓库
+    steps:
+      - name: Generate metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # 改成你的 GitHub 用户名
+          user: b8l8u8e8
+
+          # 模板风格：classic / terminal / markdown 等
+          template: classic
+
+          # 输出文件名（默认生成到仓库根目录）
+          filename: github-metrics.svg
+
+          # 基础信息区块
+          base: header, activity, community, repositories
+
+          # 语言统计
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+
+          # 最近活动（commit/issue/pr 等）
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+
+          # PR / issue 相关（可选）
+          plugin_followup: yes
+
+          # 如果你有很多组织贡献，这个会更完整
+          repositories_forks: yes
