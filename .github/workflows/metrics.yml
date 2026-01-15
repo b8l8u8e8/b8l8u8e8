@@ -20,7 +20,9 @@ jobs:
 
           # 改成你的 GitHub 用户名
           user: b8l8u8e8
-
+          
+          debug: yes 
+          
           # 模板风格：classic / terminal / markdown 等
           template: classic
 
