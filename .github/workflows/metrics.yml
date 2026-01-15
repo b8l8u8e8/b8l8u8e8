@@ -21,26 +21,19 @@ jobs:
           # 改成你的 GitHub 用户名
           user: b8l8u8e8
           
-          debug: yes 
-          
           # 模板风格：classic / terminal / markdown 等
-          template: classic
+          template: terminal
 
           # 输出文件名（默认生成到仓库根目录）
           filename: github-metrics.svg
 
           # 基础信息区块
-          base: header, activity, community, repositories
+          base: header, community, repositories
           
           # 语言统计
           plugin_languages: yes
           plugin_languages_details: bytes-size, percentage
           plugin_languages_limit: 8
-
-          # 最近活动（commit/issue/pr 等）
-          plugin_activity: yes
-          plugin_activity_limit: 3
-          plugin_activity_days: 7
 
           # PR / issue 相关（可选）
           plugin_followup: yes
