@@ -22,7 +22,7 @@ jobs:
           user: b8l8u8e8
           
           # 模板风格：classic / terminal / markdown 等
-          template: markdown
+          template: classic
 
           # 输出文件名（默认生成到仓库根目录）
           filename: github-metrics.svg
