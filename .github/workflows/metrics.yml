@@ -31,9 +31,6 @@ jobs:
 
           # 基础信息区块
           base: header, activity, community, repositories
-
-          plugin_activity_limit: 3
-          plugin_activity_days: 7
           
           # 语言统计
           plugin_languages: yes
@@ -42,8 +39,8 @@ jobs:
 
           # 最近活动（commit/issue/pr 等）
           plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 14
+          plugin_activity_limit: 3
+          plugin_activity_days: 7
 
           # PR / issue 相关（可选）
           plugin_followup: yes
