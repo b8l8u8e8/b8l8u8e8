@@ -1,9 +1,8 @@
 name: Metrics
 
 on:
-  # 每天 UTC 0 点跑一次（你也可以改）
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0,2,4,6,8,10,12,14,16,18,20,22 * * *"
   # 允许你在 Actions 页面手动点击运行
   workflow_dispatch:
 
